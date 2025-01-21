@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday, Pookie!</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      text-align: center;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-top: 20px;
+      animation: bounce 2s infinite;
+    }
+
+    p {
+      font-size: 1.5em;
+      margin: 20px 0;
+    }
+
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: #fff;
+      opacity: 0.8;
+      border-radius: 50%;
+      animation: fall 3s linear infinite;
+    }
+
+    @keyframes bounce {
+      0%,
+      100% {
+        transform: translateY(-10px);
+      }
+
+      50% {
+        transform: translateY(10px);
+      }
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-100vh) rotate(0deg);
+      }
+
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+      }
+    }
+
+    #gallery {
+      margin: 40px auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+      max-width: 90%;
+    }
+
+    .photo {
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .photo img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .photo:hover {
+      transform: scale(1.1);
+    }
+
+    .fun-message {
+      margin-top: 30px;
+      padding: 20px;
+      font-size: 1.8em;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      display: inline-block;
+    }
+
+    #slideshow {
+      margin-top: 40px;
+    }
+
+    #slideshow h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    #slideshow-image {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Happy Birthday, Pookie! ❤️</h1>
+  <p>To my wonderful Thuchan, you light up my world like no one else. Wishing you a day filled with smiles, laughter, and love.</p>
+
+  <!-- Fun Birthday Message -->
+  <div class="fun-message">🎉 Let's meet at 11 today Thuchann! 🎂</div>
+
+  <!-- Confetti Animation -->
+  <div id="confetti-container"></div>
+
+  <!-- Photo Gallery -->
+  <div id="gallery">
+    <!-- Replace these images with your own -->
+    <div class="photo"><img src="https://i.imgur.com/gee8OJO.jpeg" alt="Photo 2"></div>
+    <div class="photo"><img src="https://i.imgur.com/rc6oNto.jpeg" alt="Photo 3"></div>
+    <div class="photo"><img src="https://i.imgur.com/EgvMfbL.jpeg" alt="Photo 4"></div>
+    <div class="photo"><img src="https://i.imgur.com/PfQ7arh.jpeg" alt="Photo 5"></div>
+    <div class="photo"><img src="https://i.imgur.com/aK9rKHt.jpeg" alt="Photo 6"></div>
+  </div>
+
+  <!-- Slideshow Section -->
+  <div id="slideshow">
+    <h2>Moments We Cherish</h2>
+    <img src="https://via.placeholder.com/600x400" alt="Slideshow Image" id="slideshow-image">
+  </div>
+  
+<!-- Cat Meme -->
+  <div class="cat-meme">
+     <h3>THIS US FRFR</h3>
+    <img src="https://i.imgur.com/8JW1B5c.jpeg" alt="Cute Cat Meme">
+  </div>
+  
+  <script>
+    // Generate confetti dynamically
+    const confettiContainer = document.getElementById('confetti-container');
+    for (let i = 0; i < 100; i++) {
+      const confetti = document.createElement('div');
+      confetti.classList.add('confetti');
+      confetti.style.left = Math.random() * 100 + 'vw';
+      confetti.style.animationDuration = Math.random() * 2 + 2 + 's';
+      confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 75%)`;
+      confettiContainer.appendChild(confetti);
+    }
+
+    // Slideshow logic
+    const slideshowImages = [
+      "https://i.imgur.com/OCDzwUV.jpeg",  // First photo
+      "https://i.imgur.com/UukyU8N.jpeg",  // Second photo
+      "https://i.imgur.com/5KgWBew.jpeg",  // Third photo
+      "https://i.imgur.com/NWYLEUl.jpeg",  // Fourth photo
+      "https://i.imgur.com/Cj4mYsc.jpeg",  // Fifth photo
+      "https://i.imgur.com/VmD7fJX.jpeg"   // Sixth photo
+    ];
+
+    const slideshowImage = document.getElementById('slideshow-image');
+    let currentIndex = 0;
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % slideshowImages.length;
+      slideshowImage.src = slideshowImages[currentIndex];
+    }, 3000);  // Change image every 3 seconds
+  </script>
+</body>
+
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
